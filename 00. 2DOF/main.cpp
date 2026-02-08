@@ -41,6 +41,8 @@ derivitive deriv;			// derivitive struct
 void update();		// Update derivitives
 void rk4();			// RK4 integrator declaration
 
+// this creates vectors of variables to be integrated by RK4. 
+// it also creates the vectors to hold the intermediate RK4 values.
 void addToIntegrator(double &x, double &dx) {
 	double *x_ptr, *dx_ptr;
 	 x_ptr =  &x;
@@ -132,6 +134,7 @@ void update() {					// update derivitive values
 	dv = -32.2 - beta*dz;
 }
 
+// runge-Kutta 4th order integrator.
 void rk4() {
 	double dt = 0.001;				// CLOCK RATE
 
